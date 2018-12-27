@@ -1,0 +1,17 @@
+{
+    "leftbar": {
+        "items": [
+            {
+                "name": "Home",
+                "link": "#home"
+            },
+            {
+                "name": "Button",
+                "link": "#button"
+            }
+        ]
+    },
+    "code": {
+        "button": "<Panel></br><m-btn>Button</m-btn></Panel>"
+    }
+}

@@ -3,6 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import 'highlight.js/styles/googlecode.css'
+import hljs from 'highlight.js'
+
+/**
+ * code highlight 
+ */
+Vue.directive('highlight',function (el) {
+    let blocks = el.querySelectorAll('pre code');
+    blocks.forEach((block)=>{
+        hljs.highlightBlock(block)
+    })
+})
 
 Vue.config.productionTip = false
 

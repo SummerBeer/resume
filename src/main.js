@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import 'highlight.js/styles/googlecode.css'
+import 'highlight.js/styles/vs2015.css'
 import hljs from 'highlight.js'
 
 /**

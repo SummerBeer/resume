@@ -2,7 +2,7 @@
     <div id='leftbar'>
         <ul id="items">
             <li class="item" :key='index' v-for='(item, index) in items'>
-                <a href=""> {{item.name}} </a>
+                <a :href=item.link> {{item.name}} </a>
             </li>
         </ul>
     </div>
@@ -21,18 +21,21 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="scss">
+@import '../../packages/style/common.scss';
+
 * {
     margin: 0;
     padding: 0;
 }
 
 #leftbar {
-    position: relative;
+    position: fixed;
     width: 20vw;
     height: 100vh;
     padding: 30px 0px;
     min-width: 100px;
+    background-color: #ddd;
     border-right-width: 1px;
     border-right-color: #eee;
     border-right-style: solid;
@@ -50,11 +53,21 @@ export default {
 
     & .item {
         list-style: none;
+        @include flex-center(row);
+        width: 100%;
+        height: 40px;
         margin: 5px 0;
+        font-weight: bold;
 
         & a {
             text-decoration: none;
             color: #000;
+        }
+    }
+    & .item:hover {
+        background-color: $blue;
+        & a {
+            color: #fff;
         }
     }
 }

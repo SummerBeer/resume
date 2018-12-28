@@ -1,5 +1,5 @@
 <template>
-    <div id="panel" :title=title :text=text>
+    <div id="panel" :title=title :text=text :active=active>
         <span class='panel-title'>{{title}}</span>
         <div class="panel-content">
             <slot></slot>
@@ -32,6 +32,10 @@ export default {
         height: {
             default: 0,
             type: Number
+        },
+        active: {
+            default: false,
+            type: Boolean
         }
     },
     computed: {
@@ -45,7 +49,7 @@ export default {
     data() {
         return {
             status: '',
-            isActive: false
+            isActive: this.active
         }
     },
     methods: {
@@ -57,26 +61,12 @@ export default {
 }
 </script>
 
-<style lang='postcss'>
-@import url('../../packages/style/color.postcss');
-
-@media screen and (max-width: 600px) {
-    #panel {
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 601px){
-    #panel {
-        width: 60vw;
-    }
-}
+<style lang='scss'>
+@import '../../packages/style/common.scss';
 
 #panel {
+    width: 100%;
     position: relative;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
     background-color: #fff;
     align-items: center;
 }
@@ -100,6 +90,11 @@ export default {
 .panel-content {
     position: relative;
     padding: 10px 30px;
+    @include flex(row, wrap, flex-start, center);
+
+    & button {
+        margin: 10px 20px;
+    }
 }
 
 .panel-reverse-toggle {
@@ -121,11 +116,12 @@ export default {
 
 
 .panel-reverse {
+    padding: 0px 20px;
     position: relative;
     overflow: hidden;
-    padding: 10px 20px;
 }
 .panel-reverse-active {
+    border-top: 1px solid #eee;
     transition: height 0.5s;
 }
 </style>

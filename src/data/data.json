@@ -8,6 +8,10 @@
             {
                 "name": "Button",
                 "link": "#button"
+            },
+            {
+                "name": "Selector",
+                "link": "#selector"
             }
         ]
     },

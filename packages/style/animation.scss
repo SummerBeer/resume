@@ -1,0 +1,10 @@
+@mixin color-glitter($color1, $color2) {
+    @keyframes color-glitter {
+        from {
+            background-color: $color1;
+        }
+        to {
+            background-color: $color2;
+        }
+    }
+}

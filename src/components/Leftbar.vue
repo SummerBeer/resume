@@ -1,7 +1,7 @@
 <template>
     <div id='leftbar'>
         <ul id="items">
-            <li class="item" :key='index' v-for='(item, index) in items'>
+            <li class="item" :class="[`nav-item-${item.name == cur? 'active': ''}`]" @click="cur=item.name" :key='index' v-for='(item, index) in items'>
                 <a :href=item.link> {{item.name}} </a>
             </li>
         </ul>
@@ -15,7 +15,8 @@ export default {
     name: 'leftbar',
     data() {
         return{
-            items: DATA.leftbar.items
+            items: DATA.leftbar.items,
+            cur: 'Home'
         }
     }
 }
@@ -61,7 +62,7 @@ export default {
 
         & a {
             text-decoration: none;
-            color: #000;
+            color: $dark-grey;
         }
     }
     & .item:hover {
@@ -69,6 +70,14 @@ export default {
         & a {
             color: #fff;
         }
+    }
+}
+
+.nav-item-active {
+    background-color: $blue;
+    
+    & a{
+        color: #fff !important;
     }
 }
 </style>

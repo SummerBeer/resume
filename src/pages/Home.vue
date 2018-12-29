@@ -13,22 +13,28 @@
         <div id="selector" class="section">
             <Panel title='Selector' :height=340 :text=text1>
                 <Selector @value='getValue' :options=options>
-                    
+
                 </Selector>
                 <span class='selected'>选择的是: {{value}}</span>
+            </Panel>
+        </div>
+
+        <div id="radio" class="section">
+            <Panel title='Radio' :height=340 :text=text2>
+                <Radio :options=options @value="getValue" />
             </Panel>
         </div>
     </div>
 </template>
 
 <script>
-import {Button, Selector} from '@/index.js'
+import {Button, Selector, Radio} from '@/index.js'
 import Panel from '@/components/Panel'
-import {ButtonCode, SelectorCode} from '@/data/code.js'
+import {ButtonCode, SelectorCode, RadioCode} from '@/data/code.js'
 
 export default {
     name: 'home',
-    components: {Button, Panel, Selector},
+    components: {Button, Panel, Selector, Radio},
     watch:{
         value: function(){
             console.log(`value: ${this.value}`)
@@ -38,8 +44,9 @@ export default {
         return {
             text: ButtonCode,
             text1: SelectorCode,
+            text2: RadioCode,
             value: '',
-            options: ['option1', 'option2', 'option3', 'option4']
+            options: ['option1', 'option2', 'option3']
         }
     },
     methods:{
@@ -91,5 +98,3 @@ export default {
     color: $dark-grey;
 }
 </style>
-
-

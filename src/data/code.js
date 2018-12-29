@@ -28,7 +28,30 @@ export default {
 }  
 `
 
+var radio = 
+`
+<template>
+    <Radio :options=options @value="getValue" />
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            options: ['option1', 'option2', 'option3', 'option4'],
+            value: ''
+        }
+    },
+    methods: {
+        getValue(value){
+            this.value = value
+        }
+    }
+}  
+`
+
 module.exports = {
     ButtonCode: button,
-    SelectorCode: select
+    SelectorCode: select,
+    RadioCode: radio
 }

@@ -103,6 +103,7 @@ export default {
     overflow: hidden;
     height: 0;
     left: 0;
+    z-index: 100;
     width: 150px;
     top: 34px;
     background-color: #fff;
@@ -124,4 +125,3 @@ export default {
     font-weight: bold;
 }
 </style>
-

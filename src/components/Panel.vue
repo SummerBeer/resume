@@ -117,7 +117,6 @@ export default {
 
 .panel-reverse {
     padding: 0px 20px;
-    position: relative;
     overflow: hidden;
 }
 .panel-reverse-active {
@@ -125,5 +124,3 @@ export default {
     transition: height 0.5s;
 }
 </style>
-
-

@@ -11,12 +11,8 @@ import 'highlight.js/styles/googlecode.css'
 
 export default {
   name: 'App',
-  mounted() {
-        hljs.highlightCode = function () { //自定义highlightCode方法，将只执行一次的逻辑去掉
-            let blocks = document.querySelectorAll('pre code');
-            [].forEach.call(blocks, hljs.highlightBlock);
-        };
-        hljs.highlightCode()
+  created() {
+        this.$router.push('/')
   }
 }
 </script>

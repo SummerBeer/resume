@@ -4,10 +4,9 @@
     <div class="option-wrap" v-for="(option, index) in options" :key=index @click="choice(option)">
         <label class="option-name" :class="[`option-${option==active?'active':''}`]" :for=option> {{option}}: </label>
         <input :id=option class="option" :name=name type="radio" :value=option v-model="active">
-            <span>
-                <span :class="[`input-${option==active?'active':''}`]"></span>
-            </span>
-        </input>
+        <span>
+            <span :class="[`input-${option==active?'active':''}`]"></span>
+        </span>
     </div>
 </div>
 
@@ -44,7 +43,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../style/common.scss';
 
 .radio {
@@ -73,10 +72,13 @@ export default {
 
 input {
     position: relative;
+    z-index: 10;
     opacity: 0;
+    right: -14px;
 }
 input[type=radio]+span {
     position: relative;
+    z-index: 1;
     width: 14px;
     height: 14px;
     border-radius: 50%;

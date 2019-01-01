@@ -50,8 +50,53 @@ export default {
 }  
 `
 
+var checkbox = 
+`
+<template>
+    <Checkbox name="checkbox" :options=options @values="getValue" />
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            options: ['option1', 'option2', 'option3', 'option4'],
+            value: ''
+        }
+    },
+    methods: {
+        getValue(value){
+            this.value = value
+        }
+    }
+}  
+`
+
+var input = 
+`
+<template>
+    <Input width="200px" @value="getInputValue" placeholder="输入日期" src="../../static/calendar.png"/>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            value: ''
+        }
+    },
+    methods: {
+        getInputValue(value){
+            this.value = value
+        }
+    }
+}  
+`
+
 module.exports = {
     ButtonCode: button,
     SelectorCode: select,
-    RadioCode: radio
+    RadioCode: radio,
+    CheckboxCode: checkbox,
+    InputCode: input
 }

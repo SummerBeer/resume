@@ -74,7 +74,7 @@ export default {
     min-width: 100px;
     border-radius: 3px;
     @include flex-center(row);
-    z-index: 0;
+    z-index: 100;
 }
 .selected:hover {
     cursor: pointer;

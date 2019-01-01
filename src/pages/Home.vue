@@ -21,20 +21,35 @@
 
         <div id="radio" class="section">
             <Panel title='Radio' :height=340 :text=text2>
-                <Radio :options=options @value="getValue" />
+                <Radio name="radio" :options=options />
+            </Panel>
+        </div>
+
+        <div id="checkbox" class="section">
+            <Panel title="Checkbox" :height=340 :text=text3>
+                <Checkbox name="checkbox" :options=checkboxOptions />
+            </Panel>
+        </div>
+
+        <div id="input" class="section">
+            <Panel title="Input" :height=340 :text=text4>
+                <div class="input-wrap">
+                    <Input width="200px" @value="getInputValue" placeholder="输入日期" src="../../static/calendar.png"/>
+                    <span class="input-text">输入内容: {{inputValue}}</span>
+                </div>
             </Panel>
         </div>
     </div>
 </template>
 
 <script>
-import {Button, Selector, Radio} from '@/index.js'
+import {Button, Selector, Radio, Checkbox, Input} from '@/index.js'
 import Panel from '@/components/Panel'
-import {ButtonCode, SelectorCode, RadioCode} from '@/data/code.js'
+import {ButtonCode, SelectorCode, RadioCode, CheckboxCode, InputCode} from '@/data/code.js'
 
 export default {
     name: 'home',
-    components: {Button, Panel, Selector, Radio},
+    components: {Button, Panel, Selector, Radio, Checkbox, Input},
     watch:{
         value: function(){
             console.log(`value: ${this.value}`)
@@ -45,13 +60,20 @@ export default {
             text: ButtonCode,
             text1: SelectorCode,
             text2: RadioCode,
-            value: '',
-            options: ['option1', 'option2', 'option3']
+            text3: CheckboxCode,
+            text4: InputCode,
+            options: ['option1', 'option2', 'option3'],
+            checkboxOptions: ['checkbox-option1', 'checkbox-option2', 'checkbox-option3'],
+            value: "",
+            inputValue: ""
         }
     },
     methods:{
         getValue(r){
-            this.value = r;
+            this.value = r
+        },
+        getInputValue(input){
+            this.inputValue = input
         }
     }
 }
@@ -96,5 +118,15 @@ export default {
     margin: 10px 10px;
     font-size: 14px;
     color: $dark-grey;
+}
+
+.input-wrap {
+    position: relative;
+    @include flex(column, wrap, center, left);
+
+    .input-text {
+        color: $dark-grey;
+        font-size: 14px;
+    }
 }
 </style>

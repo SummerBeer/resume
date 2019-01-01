@@ -27,7 +27,16 @@
             }
         ]
     },
-    "code": {
-        "button": "<Panel></br><m-btn>Button</m-btn></Panel>"
+    "navbar": {
+        "items": [
+            {
+                "name": "Vue组件",
+                "link": "/"
+            },
+            {
+                "name": "Jquery样例",
+                "link": "/static/jquery/index.html"
+            }
+        ]
     }
 }

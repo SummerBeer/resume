@@ -36,7 +36,7 @@ export default {
     height: 100vh;
     padding: 30px 0px;
     min-width: 100px;
-    background-color: #ddd;
+    background-color: $leftbar-background-color;
     border-right-width: 1px;
     border-right-color: #eee;
     border-right-style: solid;
@@ -62,7 +62,7 @@ export default {
 
         & a {
             text-decoration: none;
-            color: $dark-grey;
+            color: $leftbar-font-color;
         }
     }
     & .item:hover {

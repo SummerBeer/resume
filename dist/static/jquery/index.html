@@ -11,15 +11,7 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
-
-    <!-- outer script -->
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+    <link href="https://cdn.bootcss.com/Swiper/4.4.6/css/swiper.min.css" rel="stylesheet">
 
     <!-- custom  -->
     <link rel="stylesheet" href="./css/index.css">
@@ -29,16 +21,20 @@
     <div class="home-wrap container-fluid">
 
         <!-- nav -->
-        <div class="row">
+        <div class="row top-nav">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="modal" data-target="#signupModal">登陆</a>
+                                <a class="nav-link" data-toggle="modal" data-target="#signinModal">登陆</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">注册</a>
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#signupModal">注册</a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">客户服务</a>
@@ -102,6 +98,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">居家</a>
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">服装</a>
@@ -122,6 +119,50 @@
                         <a class="nav-link" href="#">婴童</a>
                     </li>
                 </ul>
+            </div>
+        </div>
+
+        <!-- swiper -->
+        <div class="row section">
+            <div class="col-md-10 offset-md-1">
+                <h2 class="section-title">今日新品</h2>
+                <a href="#" class="more-recommend">
+                    <span class="section-more">更多推荐</span>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper1.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper3.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper4.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper5.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper6.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper7.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
             </div>
         </div>
 
@@ -169,6 +210,16 @@
                     </div>
                     <div class="card">
                         <img class="card-img-top" src="assets/product-4.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">限时特价</p>
+                            <h5 class="card-title">20寸 磨砂PC膜拉链登机箱</h5>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">780¥</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="assets/product-9.jpg" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">限时特价</p>
                             <h5 class="card-title">20寸 磨砂PC膜拉链登机箱</h5>
@@ -233,6 +284,16 @@
                             <small class="text-muted">10.9¥</small>
                         </div>
                     </div>
+                    <div class="card">
+                        <img class="card-img-top" src="assets/product-10.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">团购优惠</p>
+                            <h5 class="card-title">新鲜当季水果四川丑橘丑八怪橘子不知火柑【65-120】多规格非橙子</h5>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">10.9¥</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -250,42 +311,157 @@
         </div>
         <div class="row footer-span">
             <div class="col-md-8 offset-md-2">
-                <span>Copyright 2015-2020 huangyh.com 版权所有 (增值电信业务经营许可证：沪B2-021374290)</span>
+                <span class="copyright">Copyright 2015-2020 huangyh.com 版权所有 (增值电信业务经营许可证：沪B2-021374290)</span>
             </div>
         </div>
 
-        <!-- signup -->
-        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <!-- signin -->
+        <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">登陆</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="#">
                             <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                <label for="recipient-name" class="col-form-label">用户名:</label>
                                 <input type="text" class="form-control" id="recipient-name">
                             </div>
                             <div class="form-group">
-                                <label for="message-text" class="col-form-label">Message:</label>
-                                <textarea class="form-control" id="message-text"></textarea>
+                                <label for="message-text" class="col-form-label">密码:</label>
+                                <input class="form-control" id="message-text" type="text" />
+                            </div>
+                            <div class="form-group vertify-code">
+                                <div class="vertify-input-wrap">
+                                    <label for="vertify-code" class="message-text">验证</label>
+                                    <input type="text" class="form-control" id="vertify-code" />
+                                </div>
+                                <div class="vertify-code-wrap ">
+                                    <img src="./assets/noise.jpg" class="vertify-code-picture">
+                                    <span class="vertify-code-number"></span>
+                                </div>
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Send message</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-primary signup sumbit" data-toggle="modal" data-target="#tips">登陆</button>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- signup -->
+        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">注册</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="form-group">
+                                <label for="user-name" class="col-form-label">用户名:</label>
+                                <input type="text" class="form-control" id="user-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="user-password" class="col-form-label">密码:</label>
+                                <input class="form-control" id="user-password" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email-text" class="col-form-label">邮箱:</label>
+                                <input class="form-control" id="email-text" type="text" />
+                            </div>
+                            <div class="form-group vertify-code">
+                                <div class="vertify-input-wrap">
+                                    <label for="vertify-code" class="message-text">验证</label>
+                                    <input type="text" class="form-control" id="vertify-code" />
+                                </div>
+                                <div class="vertify-code-wrap ">
+                                    <img src="./assets/noise.jpg" class="vertify-code-picture">
+                                    <span class="vertify-code-number"></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-primary signup sumbit" data-toggle="modal" data-target="#tips">注册</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- sumbit tips -->
+        <div class="modal fade" id="tips" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">错误提示</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>此网站尚未连接服务器，只作前端部分展示</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- outer script -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+    <script src="https://cdn.bootcss.com/lodash.js/4.17.11/lodash.min.js"></script>
+    <script src="https://cdn.bootcss.com/Swiper/4.4.6/js/swiper.min.js"></script>
+
+    <!-- custom script -->
+    <script src="./js/common.js"></script>
+    <script>
+        function refreshCode() {
+            $(".vertify-code-number").text(getVertifyCode(6))
+        }
+        refreshCode()
+
+        $(".vertify-code-wrap ").on("click", refreshCode)
+
+        $(".sumbit").on("click", function () {
+
+        })
+
+        var mySwiper = new Swiper(".swiper-container", {
+            direction: "horizontal",
+            loop: true,
+            grabCursor: true,
+            slidesPerView: 4,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets'
+            }
+        })
+    </script>
 </body>
 
 </html>

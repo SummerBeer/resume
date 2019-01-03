@@ -1,5 +1,9 @@
 <template>
-    <button :theme=theme :size=size :status=status class='btn' :class="[`btn-theme-${theme}`, `btn-size-${size}`, `btn-status-${status}`]" :disabled=status>
+    <button 
+    :theme=theme 
+    :size=size 
+    :status=status  
+        :disabled=status class='btn' :class="[`btn-theme-${theme}`, `btn-size-${size}`, `btn-status-${status}`]">
         <label class='btn-text'>
             <slot></slot>
         </label>

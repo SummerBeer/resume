@@ -1,6 +1,6 @@
 <template>
     <ul id="navbar" class="items">
-        <li class="item" v-for="(item, index) in items" :key=index >
+        <li class="item" :class="item.name=='Vue组件'?'active':''" v-for="(item, index) in items" :key=index>
             <a :href=item.link>
                 {{item.name}}
             </a>
@@ -15,7 +15,8 @@ export default {
     name: "navbar",
     data() {
         return {
-            items: items.navbar.items
+            items: items.navbar.items,
+            isActive: false
         }
     },
     methods: {
@@ -31,23 +32,23 @@ export default {
     @include init;
 }
 
-@media screen and (max-width: 600px) {
-    #navbar{
-        left: 100px;
-    }
-}
+// @media screen and (max-width: 600px) {
+//     #navbar{
+//         left: 100px;
+//     }
+// }
 
-@media screen and (min-width: 601px){
-    #navbar{
-        left: 20vw;
-    }
-}
+// @media screen and (min-width: 601px){
+//     #navbar{
+//         left: 20vw;
+//     }
+// }
 
 #navbar {
     position: fixed;
     z-index: 1000;
     top: 0px;
-    width: 80vw;
+    width: 100vw;
     height: 50px;
     background-color: $navbar-background-color;
     border-bottom: 1px solid #eee;
@@ -56,7 +57,6 @@ export default {
 
 .items {
     position: relative;
-    padding: 0px 5%;
     width: 100%;
     height: 100%;
     @include flex(row, nowrap, flex-start, center);
@@ -64,12 +64,30 @@ export default {
 .item {
     margin-right: 20px;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 14px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    justify-content: center;
 
     & a {
         color: $navbar-font-color;
     }
 }
+.item:hover {
+    background-color: $dark-grey;
+    & a {
+        color: #fff;
+        
+    }
+}
+// .item.active {
+//     background-color: $dark-grey;
+//     & a {
+//         color: #fff;
+//     }
+// }
 </style>
 
 

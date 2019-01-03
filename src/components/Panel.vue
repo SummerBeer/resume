@@ -69,6 +69,7 @@ export default {
     position: relative;
     background-color: #fff;
     align-items: center;
+    padding-top: 20px;
 }
 
 #panel:hover {

@@ -11,16 +11,7 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link href="https://unpkg.com/ionicons@4.5.0/dist/css/ionicons.min.css" rel="stylesheet">
-
-    <!-- outer script -->
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
-    <script src="https://cdn.bootcss.com/lodash.js/4.17.11/lodash.min.js"></script>
+    <link href="https://cdn.bootcss.com/Swiper/4.4.6/css/swiper.min.css" rel="stylesheet">
 
     <!-- custom  -->
     <link rel="stylesheet" href="./css/index.css">
@@ -107,6 +98,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">居家</a>
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">服装</a>
@@ -130,6 +122,49 @@
             </div>
         </div>
 
+        <!-- swiper -->
+        <div class="row section">
+            <div class="col-md-10 offset-md-1">
+                <h2 class="section-title">今日新品</h2>
+                <a href="#" class="more-recommend">
+                    <span class="section-more">更多推荐</span>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper1.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper3.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper4.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper5.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper6.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./assets/swiper7.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
 
         <!-- hot recommend  -->
         <div class="row section">
@@ -175,6 +210,16 @@
                     </div>
                     <div class="card">
                         <img class="card-img-top" src="assets/product-4.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">限时特价</p>
+                            <h5 class="card-title">20寸 磨砂PC膜拉链登机箱</h5>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">780¥</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="assets/product-9.jpg" alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">限时特价</p>
                             <h5 class="card-title">20寸 磨砂PC膜拉链登机箱</h5>
@@ -239,6 +284,16 @@
                             <small class="text-muted">10.9¥</small>
                         </div>
                     </div>
+                    <div class="card">
+                        <img class="card-img-top" src="assets/product-10.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">团购优惠</p>
+                            <h5 class="card-title">新鲜当季水果四川丑橘丑八怪橘子不知火柑【65-120】多规格非橙子</h5>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">10.9¥</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -256,7 +311,7 @@
         </div>
         <div class="row footer-span">
             <div class="col-md-8 offset-md-2">
-                <span>Copyright 2015-2020 huangyh.com 版权所有 (增值电信业务经营许可证：沪B2-021374290)</span>
+                <span class="copyright">Copyright 2015-2020 huangyh.com 版权所有 (增值电信业务经营许可证：沪B2-021374290)</span>
             </div>
         </div>
 
@@ -366,6 +421,18 @@
         </div>
     </div>
 
+    <!-- outer script -->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+    <script src="https://cdn.bootcss.com/lodash.js/4.17.11/lodash.min.js"></script>
+    <script src="https://cdn.bootcss.com/Swiper/4.4.6/js/swiper.min.js"></script>
+
+    <!-- custom script -->
     <script src="./js/common.js"></script>
     <script>
         function refreshCode() {
@@ -373,10 +440,26 @@
         }
         refreshCode()
 
-        $(".vertify-code").on("click", refreshCode)
+        $(".vertify-code-wrap ").on("click", refreshCode)
 
         $(".sumbit").on("click", function () {
 
+        })
+
+        var mySwiper = new Swiper(".swiper-container", {
+            direction: "horizontal",
+            loop: true,
+            grabCursor: true,
+            slidesPerView: 4,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets'
+            }
         })
     </script>
 </body>

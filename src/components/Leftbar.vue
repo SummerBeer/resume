@@ -34,12 +34,13 @@ export default {
     position: fixed;
     width: 20vw;
     height: 100vh;
-    padding: 30px 0px;
+    padding: 50px 0px;
     min-width: 100px;
     background-color: $leftbar-background-color;
     border-right-width: 1px;
     border-right-color: #eee;
     border-right-style: solid;
+    z-index: 100;
 
     & #items {
         position: relative;
@@ -54,15 +55,18 @@ export default {
 
     & .item {
         list-style: none;
-        @include flex-center(row);
         width: 100%;
         height: 40px;
-        margin: 5px 0;
+        margin-bottom: 5px;
         font-weight: bold;
 
         & a {
+            @include flex-center(row);
             text-decoration: none;
             color: $leftbar-font-color;
+            font-size: 14px;
+            width: 100%;
+            height: 100%;
         }
     }
     & .item:hover {
@@ -78,6 +82,8 @@ export default {
     
     & a{
         color: #fff !important;
+        font-size: 20px !important;
+        transition: .2s;
     }
 }
 </style>

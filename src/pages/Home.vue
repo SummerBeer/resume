@@ -1,12 +1,50 @@
 <template>
     <div id="home">
         <div id="button" class="section">
-            <Panel :text=text :height=200 title='Button' :active=true>
-                <m-btn size='sm'>Button</m-btn>
-                <m-btn theme='red'>Button</m-btn>
-                <m-btn size='lg' theme='orange'>Button</m-btn>
-                <m-btn theme='red' status='disabled'>Button</m-btn>
-                <br/>
+            <Panel class="button-panel" :text=text :height=200 title='Button' :active=true>
+                <div class="sample">
+                    <m-btn size='sm'>Button</m-btn>
+                    <m-btn theme='red'>Button</m-btn>
+                    <m-btn size='lg' theme='orange'>Button</m-btn>
+                    <m-btn theme='red' status='disabled'>Button</m-btn>
+                </div>
+                <div class="api-wrap">
+                    <div class="api-tittle">
+                        <h3>API</h3>
+                    </div>
+                    <div class="api-content">
+                        <table cellspacing="0"> 
+                            <thead>
+                                <tr>
+                                    <th>参数</th>
+                                    <th>说明</th>
+                                    <th>类型</th>
+                                    <th>可选值</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>theme</td>
+                                    <td>设置按钮的颜色</td>
+                                    <td>String</td>
+                                    <td>default | red | orange</td>
+                                </tr>
+                                <tr>
+                                    <td>size</td>
+                                    <td>设置按钮尺寸</td>
+                                    <td>String</td>
+                                    <td>sm | md | lg</td>
+                                </tr>
+                                <tr>
+                                    <td>status</td>
+                                    <td>设置按钮是否禁用</td>
+                                    <td>String</td>
+                                    <td>disabled</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </Panel>
         </div>
 
@@ -122,11 +160,37 @@ export default {
 
 .input-wrap {
     position: relative;
-    @include flex(column, wrap, center, left);
 
     .input-text {
         color: $dark-grey;
         font-size: 14px;
     }
 }
+.sample {
+    position: relative;
+    width: 100%;
+    @include flex(row, wrap, flex-start, center);
+}
+.api-wrap {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    & .api-tittle {
+        padding: 50px 50px 10px;
+        width: 100%;
+    }
+}
+.api-content {
+    & table, tr, thead, tbody {
+        width: 100%;
+    }
+    & tr {
+        height: 50px;
+    }
+    & th, td {
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+        font-size: 13px;
+    }
+}   
 </style>

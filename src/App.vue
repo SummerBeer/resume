@@ -28,20 +28,19 @@ export default {
 </script>
 
 <style lang='scss'>
+@import "../packages/style/common.scss";
+
 html {
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 body,
 html {
   margin: 0;
   padding: 0;
-  background-color: #fafafa;
-}
-body {
-  overflow: scroll;
+  overflow-x: hidden;
+  background-color: $app-background-color;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;

@@ -31,7 +31,7 @@
         "items": [
             {
                 "name": "Vue组件",
-                "link": "/"
+                "link": "./"
             },
             {
                 "name": "Jquery样例",

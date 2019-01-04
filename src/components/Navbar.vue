@@ -32,18 +32,6 @@ export default {
     @include init;
 }
 
-// @media screen and (max-width: 600px) {
-//     #navbar{
-//         left: 100px;
-//     }
-// }
-
-// @media screen and (min-width: 601px){
-//     #navbar{
-//         left: 20vw;
-//     }
-// }
-
 #navbar {
     position: fixed;
     z-index: 1000;
@@ -51,7 +39,6 @@ export default {
     width: 100vw;
     height: 50px;
     background-color: $navbar-background-color;
-    border-bottom: 1px solid #eee;
     color: $navbar-font-color;
 }
 
@@ -82,12 +69,12 @@ export default {
         
     }
 }
-// .item.active {
-//     background-color: $dark-grey;
-//     & a {
-//         color: #fff;
-//     }
-// }
+.item.active {
+    background-color: $dark-grey;
+    & a {
+        color: #fff;
+    }
+}
 </style>
 
 

@@ -49,7 +49,6 @@ export default {
     @include flex(row, nowrap, flex-start, center);
 }
 .item {
-    margin-right: 20px;
     font-weight: bold;
     font-size: 14px;
     height: 100%;

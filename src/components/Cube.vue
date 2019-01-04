@@ -6,7 +6,7 @@
         <span class="tittle-2">YH</span>
       </h1>
       <div class="cube-content">
-        <p>design by Huangyh. homepage: http://github.com/SummerBeer</p>
+        <p>design by Huangyh. homepage:<a href="http://github.com/SummerBeer"> http://github.com/SummerBeer</a></p>
       </div>
       <div class="wrapper">
         <div class="block top"></div>
@@ -43,7 +43,6 @@ export default {
 #cube-wrapper {
   position: relative;
   height: 80vh;
-  top: -10vw;
   @include flex-center(row);
 }
 .viewport {
@@ -53,7 +52,6 @@ export default {
   perspective-origin: 50% 500px;
   perspective: 5000px;
 }
-
 .tittle-1 {
   display: block;
   position: relative;
@@ -78,12 +76,19 @@ export default {
     text-align: center;
     color: $dark-grey;
   }
+  & a {
+      color: $blue;
+  }
 }
 
+// PC
 @media screen and (min-width: 500px) {
   $size: 10vw;
   $translate: 10vw;
 
+  #cube-wrapper {
+    top: -5vw;
+  }
   .wrapper {
     position: relative;
     width: $size;
@@ -129,12 +134,14 @@ export default {
     transform: rotateX(90deg) translateZ(-$translate);
   }
 }
+
+// Phone
 @media screen and (max-width: 500px) {
   $size: 25vw;
   $translate: 30vw;
 
   #cube-wrapper {
-      top: -20vw;
+    top: -20vw;
   }
 
   .tittle-1 {
@@ -145,7 +152,7 @@ export default {
     color: $grey;
   }
   .cube-content {
-      top: 40vw;
+    top: 40vw;
   }
   .wrapper {
     position: relative;
@@ -192,6 +199,7 @@ export default {
   }
 }
 
+// Animation
 @keyframes spin {
   0% {
     /* transform: rotate3d(0.5,0.5,0.5,0deg); */

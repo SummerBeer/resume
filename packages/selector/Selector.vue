@@ -1,5 +1,8 @@
 <template>
-    <div id="selector" :value=value :options=options :size=size >
+    <div id="selector" 
+    :value=value 
+    :options=options 
+    :size=size >
         <div class="selected" :class="[`selected-size-${size}`]" id="1" name=value @click.stop='picker'>
             {{valueText}}
             <ul class='items' :class="[`items-${status}`]">

@@ -1,6 +1,8 @@
 <template>
 
-<div class="radio" :options=options :name=name>
+<div class="radio" 
+:options=options 
+:name=name>
     <div class="option-wrap" v-for="(option, index) in options" :key=index @click="choice(option)">
         <label class="option-name" :class="[`option-${option==active?'active':''}`]" :for=option> {{option}}: </label>
         <input :id=option class="option" :name=name type="radio" :value=option v-model="active">

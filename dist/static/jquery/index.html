@@ -98,10 +98,125 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">居家</a>
-
+                        <div class="nav-item-panel">
+                            <ul class="nav-panel-items">
+                                <li class="nav-panel-item">
+                                    <h3 class="nav-panel-tittle">
+                                        床品
+                                    </h3>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/panel-item.png" alt="">
+                                        <span>床品套件</span>
+                                    </a>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/panel-item2.png" alt="">
+                                        <span>被枕</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-panel-items">
+                                <li class="nav-panel-item">
+                                    <h3 class="nav-panel-tittle">
+                                        家具家装
+                                    </h3>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/panel-item3.png" alt="">
+                                        <span>家具</span>
+                                    </a>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/panel-item4.png" alt="">
+                                        <span>灯具</span>
+                                    </a>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/panel-item5.png" alt="">
+                                        <span>布艺软装</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">服装</a>
+                        <div class="nav-item-panel">
+                            <ul class="nav-panel-items">
+                                <li class="nav-panel-item">
+                                    <h3 class="nav-panel-tittle">
+                                        男装
+                                    </h3>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/panel-item6.png" alt="">
+                                        <span>男士外套</span>
+                                    </a>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/nav-panel7.png" alt="">
+                                        <span>男士针织</span>
+                                    </a>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/nav-panel8.png" alt="">
+                                        <span>男士裤装</span>
+                                    </a>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/nav-panel9.png" alt="">
+                                        <span>男士牛仔</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-panel-items">
+                                <li class="nav-panel-item">
+                                    <h3 class="nav-panel-tittle">
+                                        家具家装
+                                    </h3>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/nav-panel10.png" alt="">
+                                        <span>女士外套</span>
+                                    </a>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/nav-panel11.png" alt="">
+                                        <span>女士针织</span>
+                                    </a>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/nav-panel12.png" alt="">
+                                        <span>女士裤装</span>
+                                    </a>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/nav-panel13.png" alt="">
+                                        <span>女士牛仔</span>
+                                    </a>
+                                </li>
+                                <li class="nav-panel-item">
+                                    <a href="#" class="nav-panel-link">
+                                        <img src="./assets/nav-panel14.png" alt="">
+                                        <span>布艺软装</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">电器</a>
@@ -123,7 +238,7 @@
         </div>
 
         <!-- swiper -->
-        <div class="row section">
+        <!-- <div class="row section">
             <div class="col-md-10 offset-md-1">
                 <h2 class="section-title">今日新品</h2>
                 <a href="#" class="more-recommend">
@@ -164,7 +279,7 @@
                     <div class="swiper-button-next"></div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- hot recommend  -->
         <div class="row section">
@@ -446,21 +561,21 @@
 
         })
 
-        var mySwiper = new Swiper(".swiper-container", {
-            direction: "horizontal",
-            loop: true,
-            grabCursor: true,
-            slidesPerView: 4,
-            spaceBetween: 30,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets'
-            }
-        })
+        // var mySwiper = new Swiper(".swiper-container", {
+        //     direction: "horizontal",
+        //     loop: true,
+        //     grabCursor: true,
+        //     slidesPerView: 4,
+        //     spaceBetween: 30,
+        //     navigation: {
+        //         nextEl: '.swiper-button-next',
+        //         prevEl: '.swiper-button-prev',
+        //     },
+        //     pagination: {
+        //         el: '.swiper-pagination',
+        //         type: 'bullets'
+        //     }
+        // })
     </script>
 </body>
 

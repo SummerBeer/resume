@@ -86,6 +86,12 @@ export default {
         transition: .2s;
     }
 }
+
+@media screen and (max-width: 500px) {
+    #leftbar {
+        display: none;
+    }
+}
 </style>
 
 

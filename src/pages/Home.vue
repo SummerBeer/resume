@@ -302,18 +302,24 @@ export default {
 <style lang='scss'>
 @import "../../packages/style/common.scss";
 
-@media screen and (max-width: 600px) {
+// Phone
+@media screen and (max-width: 500px) {
     #home {
-        left: 100px;
+        left: 0px;
+        width: 100vw;
+        padding-top: 80vh;
     }
     .section {
         width: 100%;
     }
 }
 
-@media screen and (min-width: 601px) {
+// PC
+@media screen and (min-width: 501px) {
     #home {
         left: 20vw;
+        width: 80vw;
+        padding-top: 90vh;
     }
     .section {
         width: 80%;
@@ -322,9 +328,6 @@ export default {
 
 #home {
     position: relative;
-    width: 80vw;
-    height: 100vh;
-    padding-top: 90vh;
     @include flex(column, nowrap, flex-start, center);
 }
 

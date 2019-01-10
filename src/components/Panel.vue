@@ -79,13 +79,13 @@ export default {
 
 .panel-title {
     position: relative;
-    width: 50vw;
-    left: 5vw;
     display: block;
-    padding: 5px 20px;
     font-size: 20px;
     font-weight: bold;
     border-bottom: 1px solid #ddd;
+    margin: 10px 0px;
+    padding-left: 50px;
+    padding-bottom: 20px;
 }
 
 .panel-content {

@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    name: "footer",
+    name: "my-footer",
     props: {
         text: {
             default: "development by HuangYH. homepage:http://github.com/SummerBeer",
@@ -35,6 +35,13 @@ export default {
     & p{
         color: #fff;
         text-weight: lighter;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #footer p {
+        font-size: 12px;
     }
 }
 </style>

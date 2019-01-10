@@ -235,6 +235,51 @@
             </Panel>
         </div>
 
+        <div id="cascader" class="section">
+            <Panel title="Cascader" :height="340" :text="text4">
+                <div class="sample">
+                    <Cascader />
+                </div>
+                <div class="api-wrap">
+                    <div class="api-tittle">
+                        <h3>API</h3>
+                    </div>
+                    <div class="api-content">
+                        <table cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>参数</th>
+                                    <th>说明</th>
+                                    <th>类型</th>
+                                    <th>可选值</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>icon</td>
+                                    <td>为输入框添加图标</td>
+                                    <td>String</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>placeholder</td>
+                                    <td>默认占位字符串</td>
+                                    <td>String</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>width</td>
+                                    <td>输入框宽度</td>
+                                    <td>String</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </Panel>
+        </div>
+
         <div id="footer" class="section">
             <Footer/>
         </div>
@@ -242,7 +287,7 @@
 </template>
 
 <script>
-import { Button, Selector, Radio, Checkbox, Input } from "@/index.js";
+import { Button, Selector, Radio, Checkbox, Input, Cascader } from "@/index.js";
 import Panel from "@/components/Panel";
 import Cube from "@/components/Cube";
 import Footer from "@/components/Footer";
@@ -264,7 +309,8 @@ export default {
         Checkbox,
         Input,
         Cube,
-        Footer
+        Footer,
+        Cascader
     },
     watch: {
         value: function() {
@@ -364,11 +410,13 @@ export default {
     position: relative;
     width: 100%;
     @include flex(row, wrap, flex-start, center);
+    z-index: 100;
 }
 .api-wrap {
     position: relative;
     width: 100%;
     margin-bottom: 20px;
+    z-index: 10;
     & .api-tittle {
         padding: 50px 50px 10px;
         width: 100%;

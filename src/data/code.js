@@ -93,10 +93,68 @@ export default {
 }  
 `
 
+var cascader = 
+`
+<template>
+    <Cascader :options=cascaderOptions @value="getCascaderValue"/>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            value: '',
+            cascaderOptions: [
+                {
+                    key: "选项1",
+                    value: "option1",
+                    children: [
+                        {
+                            key: "选项1.1",
+                            value: "option1-1",
+                            children: [
+                                {
+                                    key: "选项1.1.1",
+                                    value: "option1-1-1"
+                                },
+                                {
+                                    key: "选项1.1.2",
+                                    value: "option1-1-2"
+                                }
+                            ]
+                        },
+                        {
+                            key: "选项1.2",
+                            value: "option1-2"
+                        }
+                    ]
+                },
+                {
+                    key: "选项2",
+                    value: "option2",
+                    children: [
+                        {
+                            key: "选项2.1",
+                            value: "option2-1"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    methods: {
+        getCascaderValue(value){
+            this.value = value
+        }
+    }
+}  
+`
+
 module.exports = {
     ButtonCode: button,
     SelectorCode: select,
     RadioCode: radio,
     CheckboxCode: checkbox,
-    InputCode: input
+    InputCode: input,
+    CascaderCode: cascader
 }

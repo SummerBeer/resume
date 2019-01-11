@@ -136,6 +136,12 @@
                                     <td>String</td>
                                     <td></td>
                                 </tr>
+                                <tr>
+                                    <td>@value</td>
+                                    <td>获得组件取得的值</td>
+                                    <td>Function</td>
+                                    <td></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -173,6 +179,12 @@
                                     <td>name</td>
                                     <td>选择器名称</td>
                                     <td>String</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>@value</td>
+                                    <td>获得组件取得的值</td>
+                                    <td>Function</td>
                                     <td></td>
                                 </tr>
                             </tbody>
@@ -228,6 +240,12 @@
                                     <td>String</td>
                                     <td></td>
                                 </tr>
+                                <tr>
+                                    <td>@value</td>
+                                    <td>获得组件取得的值</td>
+                                    <td>Function</td>
+                                    <td></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -236,9 +254,10 @@
         </div>
 
         <div id="cascader" class="section">
-            <Panel title="Cascader" :height="340" :text="text4">
+            <Panel title="Cascader" :height="1000" :text="text5">
                 <div class="sample">
-                    <Cascader />
+                    <Cascader :options=cascaderOptions @value="getCascaderValue"/>
+                    <span class="selected">选择的是: {{cascaderValue}}</span>
                 </div>
                 <div class="api-wrap">
                     <div class="api-tittle">
@@ -256,9 +275,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>icon</td>
-                                    <td>为输入框添加图标</td>
-                                    <td>String</td>
+                                    <td>options</td>
+                                    <td>可选择的值</td>
+                                    <td>Array</td>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -268,9 +287,21 @@
                                     <td></td>
                                 </tr>
                                 <tr>
-                                    <td>width</td>
-                                    <td>输入框宽度</td>
+                                    <td>size</td>
+                                    <td>选择框尺寸</td>
                                     <td>String</td>
+                                    <td>sm | md | lg</td>
+                                </tr>
+                                <tr>
+                                    <td>separator</td>
+                                    <td>取得值的分隔符</td>
+                                    <td>String</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>@value</td>
+                                    <td>获得组件取得的值</td>
+                                    <td>Function</td>
                                     <td></td>
                                 </tr>
                             </tbody>
@@ -296,7 +327,8 @@ import {
     SelectorCode,
     RadioCode,
     CheckboxCode,
-    InputCode
+    InputCode,
+    CascaderCode
 } from "@/data/code.js";
 
 export default {
@@ -324,6 +356,7 @@ export default {
             text2: RadioCode,
             text3: CheckboxCode,
             text4: InputCode,
+            text5: CascaderCode,
             options: ["option1", "option2", "option3"],
             checkboxOptions: [
                 "checkbox-option1",
@@ -331,7 +364,44 @@ export default {
                 "checkbox-option3"
             ],
             value: "",
-            inputValue: ""
+            inputValue: "",
+            cascaderValue: "",
+            cascaderOptions: [
+                    {
+                        key: "选项1",
+                        value: "option1",
+                        children: [
+                            {
+                                key: "选项1.1",
+                                value: "option1-1",
+                                children: [
+                                    {
+                                        key: "选项1.1.1",
+                                        value: "option1-1-1"
+                                    },
+                                    {
+                                        key: "选项1.1.2",
+                                        value: "option1-1-2"
+                                    }
+                                ]
+                            },
+                            {
+                                key: "选项1.2",
+                                value: "option1-2"
+                            }
+                        ]
+                    },
+                    {
+                        key: "选项2",
+                        value: "option2",
+                        children: [
+                            {
+                                key: "选项2.1",
+                                value: "option2-1"
+                            }
+                        ]
+                    }
+                ]
         };
     },
     methods: {
@@ -340,6 +410,9 @@ export default {
         },
         getInputValue(input) {
             this.inputValue = input;
+        },
+        getCascaderValue(value){
+            this.cascaderValue = value
         }
     }
 };
@@ -410,13 +483,13 @@ export default {
     position: relative;
     width: 100%;
     @include flex(row, wrap, flex-start, center);
-    z-index: 100;
+    z-index: 1;
 }
 .api-wrap {
     position: relative;
     width: 100%;
     margin-bottom: 20px;
-    z-index: 10;
+    z-index: 0;
     & .api-tittle {
         padding: 50px 50px 10px;
         width: 100%;

@@ -40,6 +40,10 @@
             {
                 "name": "Jquery样例",
                 "link": "./static/jquery/index.html"
+            },
+            {
+                "name": "小程序",
+                "link": "https://github.com/SummerBeer/timeManager"
             }
         ]
     }

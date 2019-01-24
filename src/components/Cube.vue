@@ -1,9 +1,9 @@
 <template>
   <div id="cube-wrapper" :size="size" :class="[`cube-size-${size}`]">
     <div class="viewport">
-      <h1 class="tittle-1">
+      <h1 class="title-1">
         Huang
-        <span class="tittle-2">YH</span>
+        <span class="title-2">YH</span>
       </h1>
       <div class="cube-content">
         <p>design by Huangyh. homepage:<a href="http://github.com/SummerBeer"> http://github.com/SummerBeer</a></p>
@@ -49,10 +49,10 @@ export default {
   position: relative;
   width: 100%;
   margin: 0px auto;
-  perspective-origin: 50% 500px;
+  perspective-origin: 50% 50%;
   perspective: 5000px;
 }
-.tittle-1 {
+.title-1 {
   display: block;
   position: relative;
   top: 10vw;
@@ -62,7 +62,7 @@ export default {
   font-size: 40px;
   z-index: 1;
 }
-.tittle-2 {
+.title-2 {
   color: $blue;
 }
 .cube-content {
@@ -106,13 +106,11 @@ export default {
     left: 0;
     width: $size;
     height: $size;
-    border: 1px solid #aaa;
     transition: all 1s linear;
     transform-origin: center center center;
-    color: #444;
     font-weight: lighter;
     animation: color 8s infinite linear;
-    background-color: $blue;
+    // background-color: $blue;
     opacity: 0.5;
   }
   .front {
@@ -144,7 +142,7 @@ export default {
     top: -20vw;
   }
 
-  .tittle-1 {
+  .title-1 {
     position: relative;
     top: 30vw;
     height: 100%;

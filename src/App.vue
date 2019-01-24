@@ -7,22 +7,15 @@
 <script>
 import hljs from "highlight.js";
 import "highlight.js/styles/googlecode.css";
-import items from "./data/data.json";
 
 export default {
   name: "App",
-  created() {
-    var flag = false;
-    for (var i of items.leftbar.items) {
-      if (this.$route.path == "/" + i.link.split("#")[1]) {
-        flag = true;
+  data() {
+      return {
+          
       }
-    }
-    if (flag) {
-      this.$router.push("/");
-    }
   }
-};
+}
 </script>
 
 <style lang='scss'>

@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style lang='scss'>
-@import '../../packages/style/common.scss';
+@import '../style/common.scss';
 
 #panel {
     width: 100%;

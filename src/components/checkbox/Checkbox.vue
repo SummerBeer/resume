@@ -53,7 +53,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../packages/style/common.scss";
+@import "../style/common.scss";
 
 #checkbox {
     position: relative;

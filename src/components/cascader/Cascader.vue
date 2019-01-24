@@ -21,7 +21,7 @@
                     {{item.key}}
                     <img
                         :class="[`option-icon`]"
-                        src="../../static/next.png"
+                        src="../../assets/next.png"
                         v-if="'children' in item"
                     >
                 </li>
@@ -34,7 +34,7 @@
                     {{item.key}}
                     <img
                         :class="[`option-icon`]"
-                        src="../../static/next.png"
+                        src="../../assets/next.png"
                         v-if="'children' in item"
                     >
                 </li>
@@ -47,7 +47,7 @@
                     {{item.key}}
                     <img
                         :class="[`option-icon`]"
-                        src="../../static/next.png"
+                        src="../../assets/next.png"
                         v-if="'children' in item"
                     >
                 </li>
@@ -149,8 +149,8 @@ export default {
                 this.options2 = item.children
             }
             else{
-                this.close()
                 this.getValue()
+                this.close()
             }
         },
         toggleOptions2(item){
@@ -160,20 +160,20 @@ export default {
                 this.options3 = item.children
             }
             else{
-                this.close()
                 this.getValue()
+                this.close()
             }
         },
         toggleOptions3(item){
             this.value[2] = item.value
-            this.close()
             this.getValue()
+            this.close()
         },
         close(){
             this.isActive1 = false
             this.isActive2 = false
             this.isActive3 = false
-            
+            this.value = []
         }
     }
 };

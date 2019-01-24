@@ -1,6 +1,10 @@
 @import './color.scss';
 @import './animation.scss';
 
+* {
+    list-style: none;
+}
+
 @mixin flex-center($direction) {
     display: flex;
     justify-content: center;

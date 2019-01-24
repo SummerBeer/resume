@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <router-view name="navbar"/>
-    <router-view name="leftbar"/>
-    <router-view name="main"/>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -28,7 +26,7 @@ export default {
 </script>
 
 <style lang='scss'>
-@import "../packages/style/common.scss";
+@import "./components/style/common.scss";
 
 html {
   position: relative;

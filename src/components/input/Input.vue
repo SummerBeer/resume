@@ -13,7 +13,7 @@ export default {
     name: "input-wrap",
     props: {
         icon: {
-            default: "./static/calendar.png",
+            default: "../../assets/calendar.png",
             type: String
         },
         placeholder: {

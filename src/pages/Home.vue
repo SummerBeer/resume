@@ -3,15 +3,17 @@
         <Nav>
             <Search slot="search"/>
         </Nav>
+
+        <Table title="title" class="table" />
     </div>
 </template>
 
 <script>
-import {Nav, Search} from "../index.js"
+import {Nav, Search, Table} from "../index.js"
 
 export default {
     name: "home",
-    components: {Nav, Search},
+    components: {Nav, Search, Table},
     data() {
         return {
 
@@ -22,6 +24,18 @@ export default {
 
 
 <style lang="scss" scoped>
+@import "../components/style/common.scss";
 
+#home {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.table {
+    position: absolute;
+    top: 4rem;
+    left: 2rem;
+}
 </style>
 

@@ -1,13 +1,12 @@
 <template>
     <div class="search-wrapper"
-        :width=width
         :placeholder=placeholder
         :class="{active: isToggle}"
         >
-        <input type="text" @input="inputChange" v-model="value"
+        <input type="text" @input="inputChange" v-model="value" :placeholder=placeholder
             @focus="isToggle = true"
             @blur="isToggle = false">
-        <div class="search-btn">
+        <div class="search-btn" @click="search">
             <img src="../../assets/search.png">
         </div>
     </div>
@@ -18,16 +17,13 @@
  * 
  * @param {event} [@value=]
  * @param {String} [placeholder=请输入]
+ * @param {event} [@search=]
  * 
  */
 
 export default {
     name: "search",
     props: {
-        width: {
-            default: "140px",
-            type: String
-        },
         placeholder: {
             default: "请输入",
             type: String
@@ -42,6 +38,9 @@ export default {
     methods: {
         inputChange(){
             this.$emit("value", this.value)
+        },
+        search(){
+            this.$emit("search", this.value)
         }
     }
 }
@@ -52,7 +51,7 @@ export default {
 
 .search-wrapper {
     position: relative;
-    width: 100px;
+    width: 120px;
     transition: .5s;
     @include flex-center(row);
 
@@ -65,12 +64,15 @@ export default {
         box-shadow: none;
         outline: none;
         border: 1px solid #ddd;
+        font-size: 12px;
+        padding: 6px;
+        padding-left: 4px;
     }
     
     & .search-btn {
         position: absolute;
         right: 0;
-        height: 1.5rem;
+        height: 28px;
         width: 30px;
         background-color: $dark-blue;
         @include flex-center(row);
@@ -83,8 +85,18 @@ export default {
     }
 }
 
-.search-wrapper.active {
-    width: 250px;
+// Pc
+@media screen and (min-width: 500px){
+    .search-wrapper.active {
+        width: 250px;
+    }
+}
+
+// Phone
+@media screen and (max-width: 501px){
+    .search-wrapper.active {
+        width: 60vw;
+    }
 }
 </style>
 

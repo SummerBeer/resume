@@ -13,11 +13,25 @@
             <span class="line span-3"></span>
         </div>
 
-        <!-- 导航条右方的Items -->
-        <ul :class="[`nav`]">
+        <!-- PC 导航条右方的Items -->
+        <ul class="pc-nav">
             <li class="search-wrapper">
                 <slot name="search"></slot>
             </li>
+            <li class="item" v-for="(item, index) in items" :key=index>
+                <a :href=item.link>
+                    {{item.name}}
+                </a>
+            </li>
+        </ul>
+
+        <!-- Phone 导航条 -->
+        <ul class="phone-nav">
+            <li class="search-wrapper">
+                <slot name="search"></slot>
+            </li>
+        </ul>
+        <ul class="phone-nav-2">
             <li class="item" v-for="(item, index) in items" :key=index>
                 <a :href=item.link>
                     {{item.name}}
@@ -69,6 +83,12 @@ export default {
                 },{
                     name: "item2",
                     link: "#"
+                },{
+                    name: "item2",
+                    link: "#"
+                },{
+                    name: "item2",
+                    link: "#"
                 }]
             },
             type: Array
@@ -106,6 +126,7 @@ export default {
 
 .nav-wrapper {
     position: fixed;
+    z-index: 100;
     top: 0;
     left: 0;
     width: 100vw;
@@ -157,14 +178,11 @@ export default {
 
     & ul {
         display: flex;
-        @include flex(row, wrap, flex-end, center);
         margin: 0;
-        padding: 0 2rem;
         height: 100%;
     }
 
     & .item {
-        padding: 0 1.4rem;
         height: 100%;
         @include flex-center(row);
 
@@ -179,28 +197,12 @@ export default {
         }
     }
 
-    & .search-wrapper {
-        margin-right: 1rem;
-    }
-
-    @media screen and (max-width: 500px) {
-        .nav-panel.active {
-            width: 30vw;
-        }
-    }
-    @media screen and (min-width: 501px) {
-        .nav-panel.active {
-            width: 20vw;
-        }
-    }
-
     .nav-panel {
         position: fixed;
         overflow: hidden;
         display: flex;
         @include flex(column, nowrap, flex-start, center);
         padding: 4rem 0;
-        z-index: 10;
         top: 0;
         left: 0;
         width: 0;
@@ -226,6 +228,65 @@ export default {
     }
     .nav-panel.active {
         transition: .3s;
+    }
+}
+
+// PC
+@media screen and (min-width: 501px){
+    .phone-nav {
+        display: none !important;
+    }
+    .phone-nav-2 {
+        display: none !important;
+    }
+
+    .pc-nav {
+        @include flex(row, wrap, flex-end, center);
+        padding: 0 2rem;
+        & .item {
+            padding: 0 1.4rem;
+        }
+    }
+
+    .search-wrapper {
+        margin-right: 1rem;
+    }
+
+    .nav-panel.active {
+        width: 20vw;
+    }
+}
+
+// Phone
+@media screen and (max-width: 500px) {
+    .pc-nav {
+        display: none !important;
+    }
+
+    .phone-nav {
+        @include flex(row, wrap, flex-end, center);
+        padding-right: 1rem;
+    }
+
+    .phone-nav-2 {
+        background-color: $dark-grey;
+        padding: 0;
+        @include flex(row, nowrap, flex-start, center);
+        & .item {
+            padding: 0 1rem;
+            & a{
+                color: #aaa;
+            }
+        }
+    }
+    .nav-panel.active {
+        width: 100vw;
+        & li {
+            width: 100%;
+            & a{
+                text-decoration: underline;
+            }
+        }
     }
 }
 </style>

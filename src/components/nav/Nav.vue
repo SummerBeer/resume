@@ -12,13 +12,20 @@
             <span class="line span-2"></span>
             <span class="line span-3"></span>
         </div>
+
+        <!-- 导航条右方的Items -->
         <ul :class="[`nav`]">
-            <li v-for="(item, index) in items" :key=index>
+            <li class="search-wrapper">
+                <slot name="search"></slot>
+            </li>
+            <li class="item" v-for="(item, index) in items" :key=index>
                 <a :href=item.link>
                     {{item.name}}
                 </a>
             </li>
         </ul>
+
+        <!-- 左方弹出的导航条 -->
         <ul class="nav-panel" :class="{active: isToggle}">
             <li v-for="(page, index) in pages" :key=index @click="isToggle = !isToggle">
                 <a :href=page.link>
@@ -38,6 +45,7 @@
  * @param {String} [img=''] the background img src. 
  * @param {Array} [items=] the items of nav. structure like: [{name: "item1", link: "/home"}, {name: "item2", link: "/products"}]
  * @param {Array} [pages=] structure like : [{name: "page1", link: "/page1"}]
+ * @param {Slot} [search=]
  */
 export default {
     name: "m-nav",
@@ -155,7 +163,7 @@ export default {
         height: 100%;
     }
 
-    & li {
+    & .item {
         padding: 0 1.4rem;
         height: 100%;
         @include flex-center(row);
@@ -169,6 +177,10 @@ export default {
             color: white;
             cursor:pointer;
         }
+    }
+
+    & .search-wrapper {
+        margin-right: 1rem;
     }
 
     @media screen and (max-width: 500px) {
@@ -196,8 +208,14 @@ export default {
         background-color: $dark;
 
         & li {
+            @include flex-center(row);
             height: 4rem;
             width: 20vw;
+
+            &:hover {
+                cursor: pointer;
+                background-color: $black;
+            }
         }
 
         & a {

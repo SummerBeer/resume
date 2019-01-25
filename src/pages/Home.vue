@@ -1,15 +1,17 @@
 <template>
     <div id="home">
-        <Nav />
+        <Nav>
+            <Search slot="search"/>
+        </Nav>
     </div>
 </template>
 
 <script>
-import {Nav} from "../index.js"
+import {Nav, Search} from "../index.js"
 
 export default {
     name: "home",
-    components: {Nav},
+    components: {Nav, Search},
     data() {
         return {
 

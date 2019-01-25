@@ -5,6 +5,7 @@ import Checkbox from './components/checkbox'
 import Input from './components/input'
 import Cascader from './components/cascader'
 import Nav from './components/nav'
+import Search from './components/search'
 import Vue from 'vue'
 
 Vue.component(Button.name, Button)
@@ -15,4 +16,4 @@ Vue.component(Input.name, Input)
 Vue.component(Cascader.name, Cascader)
 Vue.component(Nav.name, Nav)
 
-export {Button, Selector, Radio, Checkbox, Input, Cascader, Nav}
+export {Button, Selector, Radio, Checkbox, Input, Cascader, Nav, Search}

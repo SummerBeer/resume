@@ -1,7 +1,9 @@
 <template>
     <div class="table-wrapper"
         :title=title
-        :style="{width: width}">
+        :header=header
+        :style="{width: width}"
+        v-drag>
 
         <!-- table title -->
         <div class="table-title-wrapper">
@@ -9,47 +11,82 @@
                 {{title}}
             </div>
             <div class="table-operate">
-                <span>row: {{row}}</span>
+                <span>column: {{row}}</span>
                 <div class="row-add operate" @click="row+=1">+</div>
                 <div class="row-minus operate" @click="row-=1">-</div>
-                <span>column: {{column}}</span>
+                <span>row: {{column}}</span>
                 <div class="column-add operate" @click="column+=1">+</div>
                 <div class="column-minus operate" @click="column-=1">-</div>
+                <div class="save" @click="save">
+                    Save
+                </div>
             </div>
         </div>
+
+
+        <!-- table header -->
+        <ul class="column table-header">
+            <li class="row table-header-row" v-for="j in row" :key=j>
+                <input type="text" v-model="value[j-1]">
+            </li>
+        </ul>
 
         <!-- table body -->
         <ul class="column" v-for="i in column" :key=i>
             <li class="row" v-for="j in row" :key=j >
-                <input type="text" v-model="value[(j-1)*column+(i-1)]">
+                <input type="text" v-model="value[i*row+(j-1)]">
             </li>
         </ul>
     </div>
 </template>
 
 <script>
+/**
+ * 
+ * @param {String} [title="title"]
+ * @param {Array} [header=] Table Header. Structure: ["Id", "Name" ...]
+ * @param {event} [value=] return: [{key: value}, {...}]
+ * 
+ */
 export default {
     name: "m-table",
     props: {
         title: {
             default: "标题",
             type: String
+        },
+        header: {
+            default: function(){
+                return ["Id", "Name", "Position", "Department"]
+            },
+            type: Array
         }
     },
     computed: {
         width(){
-            return `${this.row * 100}px`
+            return `${this.row * 120}px`
         }
     },
     data() {
         return {
-            row: 3,
+            row: this.header.length || 3,
             column: 3,
-            value: []
+            value: this.header
         }
     },
     methods: {
-        
+        save() {
+            var data = []
+            for(let i=0; i<this.column; i++){
+                var d = {}
+                for(let j=0; j<this.row; j++){
+                    d[this.value[j]] = this.value[(i+1)*this.row + j]
+                }
+                data.push(d)
+            }
+            console.log(data)
+            this.$emit("value", data)
+        }
     }
 }
 </script>
@@ -76,7 +113,7 @@ export default {
 
     & .table-operate {
         width: 50%;
-        min-width: 200px;
+        min-width: 240px;
     }
 
     & .operate {
@@ -91,6 +128,22 @@ export default {
             cursor: pointer;
             font-weight: bold;
         }
+    }
+
+    & .save {
+        background-color: $blue;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-weight: bold;
+        &:hover {
+            cursor: pointer;
+            background-color: $dark-blue;
+        }
+    }
+
+    &:hover {
+        cursor: move;
     }
 }
 
@@ -111,6 +164,18 @@ export default {
         width: 100%;
         border: none;
         text-align: center;
+    }
+}
+.table-header-row {
+    & input {
+        background-color: #eee;
+        font-weight: bold;
+    }
+}
+input {
+    font-size: 13px;
+    &:hover {
+        cursor: text
     }
 }
 </style>

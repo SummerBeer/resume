@@ -34,7 +34,7 @@ export default {
 
 .table {
     position: absolute;
-    top: 4rem;
+    top: 6rem;
     left: 2rem;
 }
 </style>

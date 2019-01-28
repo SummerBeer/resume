@@ -4,6 +4,7 @@
 * {
     list-style: none;
     box-sizing: border-box;
+    color: $dark;
 }
 
 @mixin flex-center($direction) {

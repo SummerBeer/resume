@@ -60,7 +60,7 @@ export default {
         width: 100%;
         margin-right: 40px;
         transition: .5s;
-        border-radius: 0.3rem;
+        // border-radius: 0.3rem;
         box-shadow: none;
         outline: none;
         border: 1px solid #ddd;
@@ -76,11 +76,14 @@ export default {
         width: 30px;
         background-color: $dark-blue;
         @include flex-center(row);
-        border-radius: 5px;
-
+        // border-radius: 5px;
         & img {
             width: 20px;
             height: 20px;
+        }
+        &:hover {
+          cursor: pointer;
+          background-image: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(50,50,50,0.2));
         }
     }
 }

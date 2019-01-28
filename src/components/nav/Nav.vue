@@ -130,8 +130,9 @@ export default {
     top: 0;
     left: 0;
     width: 100vw;
-    background-color: #f5f5f5;
-    box-shadow: 0 1px 3px 1px rgba(80,80,80,0.1);
+    background-color: white;
+    box-shadow: 0 1px 3px 0px rgba(80,80,80,0.1);
+    border-bottom: 1px solid #ddd;
 
     .nav-toggle {
         z-index: 11;
@@ -191,7 +192,7 @@ export default {
         }
 
         &:hover, &:hover a {
-            background-color: $grey;
+            background-color: $dark-grey;
             color: white;
             cursor:pointer;
         }
@@ -207,7 +208,7 @@ export default {
         left: 0;
         width: 0;
         height: 100vh;
-        background-color: $dark;
+        background-color: $black;
 
         & li {
             @include flex-center(row);
@@ -216,7 +217,7 @@ export default {
 
             &:hover {
                 cursor: pointer;
-                background-color: $black;
+                background-color: #222;
             }
         }
 

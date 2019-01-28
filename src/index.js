@@ -9,6 +9,7 @@ import Search from './components/search'
 import Table from './components/table'
 import Card from './components/card'
 import Cube from './components/cube'
+import Panel from './components/panel'
 import Vue from 'vue'
 
 Vue.component(Button.name, Button)
@@ -21,5 +22,6 @@ Vue.component(Nav.name, Nav)
 Vue.component(Table.name, Table)
 Vue.component(Card.name, Card)
 Vue.component(Cube.name, Cube)
+Vue.component(Panel.name, Panel)
 
-export {Button, Selector, Radio, Checkbox, Input, Cascader, Nav, Search, Table, Card, Cube}
+export {Button, Selector, Radio, Checkbox, Input, Cascader, Nav, Search, Table, Card, Cube, Panel}

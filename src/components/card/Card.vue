@@ -5,9 +5,11 @@
     :date=date
     :width=width
     :img=img
+    :hasBorder=hasBorder
     >
     <div class="card-wrapper"
-      :style="{width: width, height: height}">
+      :style="{width: width, height: height}"
+      :class="{cardBorder: !hasBorder}">
       <a href="#">
         <img class="card-img" :src=img>
         <h1 class="card-text card-title">{{title}}</h1>
@@ -20,6 +22,17 @@
 
 
 <script>
+/**
+ * 
+ * Card 
+ * @param {String} title="标题"
+ * @param {String} desc=""
+ * @param {String} date=new Date().toLocaleString()
+ * @param {String} width="300px"
+ * @param {String} img=""
+ * @param {Boolean} hasBorder=false
+ * 
+ */
 export default {
   name: "card",
   props: {
@@ -42,6 +55,10 @@ export default {
     img: {
       default: "",
       type: String
+    },
+    hasBorder: {
+      default: false,
+      type: Boolean
     }
   },
   computed: {
@@ -95,6 +112,13 @@ export default {
     cursor: pointer;
     box-shadow: 2px 2px 5px 1px rgba(80,80,80,0.2);
     transition: .4s;
+  }
+}
+
+.card-wrapper.cardBorder{
+  & img {
+    width: 100%;
+    margin: 0;
   }
 }
 </style>

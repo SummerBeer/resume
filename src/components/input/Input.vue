@@ -9,11 +9,19 @@
 </template>
 
 <script>
+/**
+ * 
+ * Input
+ * @param {String} icon="static/img/img.png"
+ * @param {String} placeholder="请输入"
+ * @param {String} width="150px"
+ * 
+ */
 export default {
     name: "input-wrap",
     props: {
         icon: {
-            default: "../../assets/calendar.png",
+            default: "",
             type: String
         },
         placeholder: {
@@ -67,7 +75,7 @@ export default {
 .input-icon {
     position: absolute;
     top: 5px;
-    right: 0px;
+    right: 5px;
     width: 20px;
     height: 20px;
 }

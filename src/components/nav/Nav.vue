@@ -19,9 +19,9 @@
                 <slot name="search"></slot>
             </li>
             <li class="item" v-for="(item, index) in items" :key=index>
-                <a :href=item.link>
+                <router-link :to=item.link>
                     {{item.name}}
-                </a>
+                </router-link>
             </li>
         </ul>
 
@@ -33,18 +33,18 @@
         </ul>
         <ul class="phone-nav-2">
             <li class="item" v-for="(item, index) in items" :key=index>
-                <a :href=item.link>
+                <router-link :to="{path: item.link}">
                     {{item.name}}
-                </a>
+                </router-link>
             </li>
         </ul>
 
         <!-- 左方弹出的导航条 -->
         <ul class="nav-panel" :class="{active: isToggle}">
             <li v-for="(page, index) in pages" :key=index @click="isToggle = !isToggle">
-                <a :href=page.link>
+                <router-link :to="{path: page.link}">
                     {{page.name}}
-                </a>
+                </router-link>
             </li>
         </ul>
     </div>

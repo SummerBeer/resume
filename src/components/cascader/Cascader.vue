@@ -57,6 +57,16 @@
 </template>
 
 <script>
+/**
+ * 
+ * Cascader
+ * @param {Array} options=[{kay: "", value: "". children: [{}]}]
+ * @param {String} placeholder="请选择"
+ * @param {String} separator="/"
+ * @param {String} size="md"
+ * @param {event} @value=
+ * 
+ */
 export default {
     name: "cascader",
     mounted(){
@@ -186,9 +196,9 @@ export default {
     @include init;
 }
 
-#cascader {
+#cascader-wrapper {
     position: relative;
-    padding: 0px 20px;
+    padding: 0;
     min-width: 100px;
     border-radius: 3px;
     @include flex-center(row);
@@ -217,7 +227,7 @@ export default {
     overflow: hidden;
     width: 150px;
     top: 36px;
-    left: 0px;
+    left: 0;
     height: 0;
     background-color: white;
     border: none;

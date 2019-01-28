@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <Cube />
+    <Cube class="cube" />
   </div>
 </template>
 
@@ -31,6 +31,9 @@ export default {
 #home {
   width: 100%;
   height: 100%;
+}
+.cube {
+  width: 100%;
 }
 </style>
 

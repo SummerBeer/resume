@@ -14,6 +14,13 @@
 </template>
 
 <script>
+/**
+ * 
+ * Checkbox
+ * @param {String} name="checkbox"
+ * @param {Array} options=["option1", "option2", "option3"]
+ * 
+ */
 export default {
     name: "checkbox",
     props: {

@@ -2,8 +2,9 @@
     <div id="selector" 
     :value=value 
     :options=options 
+    :name=name
     :size=size >
-        <div class="selected" :class="[`selected-size-${size}`]" id="1" name=value @click.stop='picker'>
+        <div class="selected" :class="[`selected-size-${size}`]" id="1" name=name @click.stop='picker'>
             {{valueText}}
             <ul class='items' :class="[`items-${status}`]">
                 <li class='item' v-for="(value, index) in options" :key=index @click.stop="picked(value)">
@@ -15,6 +16,15 @@
 </template>
 
 <script>
+/**
+ * 
+ * Selector
+ * @param {String} value="请选择"
+ * @param {Array} options=["option1","option2","option3"]
+ * @param {String} size="md"
+ * @param {String} name="selector"
+ * 
+ */
 export default {
     name: 'selector',
     props: {
@@ -30,6 +40,10 @@ export default {
         value: {
             default: '请选择',
             type: String
+        },
+        name: {
+          default: "selector",
+          type: String
         }
     },
     mounted(){

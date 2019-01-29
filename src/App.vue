@@ -33,6 +33,9 @@ export default {
         },{
           name: "Button",
           link: "button"
+        },{
+          name: "Article",
+          link: "article"
         }
       ],
       items: [{

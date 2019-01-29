@@ -6,6 +6,7 @@ const Table = () => import("../pages/Table.vue")
 const Card = () => import("../pages/Card.vue")
 const Form = () => import("../pages/Form.vue")
 const Button = () => import("../pages/Button.vue")
+const Article = () => import("../pages/Article.vue")
 
 Vue.use(Router)
 
@@ -26,6 +27,10 @@ const routes = [
     path: "/button",
     name: "button",
     component: Button
+  },{
+    path: "/article",
+    name: "article",
+    component: Article
   },{
     path: '/',
     name: "home",

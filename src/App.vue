@@ -1,42 +1,61 @@
 <template>
   <div id="app">
-    <router-view name="navbar"/>
-    <router-view name="leftbar"/>
-    <router-view name="main"/>
+    <Nav :pages="pages" :items="items">
+      <Search slot="search"/>
+    </Nav>
+    <div class="content">
+      <router-view/>
+    </div>
   </div>
 </template>
 
+
 <script>
-import hljs from "highlight.js";
-import "highlight.js/styles/googlecode.css";
-import items from "./data/data.json";
+import { Nav, Search } from "./index.js";
 
 export default {
   name: "App",
-  created() {
-    var flag = false;
-    for (var i of items.leftbar.items) {
-      if (this.$route.path == "/" + i.link.split("#")[1]) {
-        flag = true;
-      }
-    }
-    if (flag) {
-      this.$router.push("/");
-    }
+  components: { Nav, Search },
+  data() {
+    return {
+      pages: [{
+          name: "Home",
+          link: "/"
+        },{
+          name: "Table",
+          link: "table"
+        },{
+          name: "Card",
+          link: "card"
+        },{
+          name: "Form",
+          link: "form"
+        },{
+          name: "Button",
+          link: "button"
+        }
+      ],
+      items: [{
+        name: "Login",
+        link: "#"
+      },{
+        name: "Help",
+        link: "#"
+      }]
+    };
   }
 };
 </script>
 
-<style lang='scss'>
-@import "../packages/style/common.scss";
 
+<style lang='scss'>
+@import "./components/style/common.scss";
+
+body,
 html {
   position: relative;
   width: 100vw;
   height: 100vh;
-}
-body,
-html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -51,5 +70,14 @@ html {
   display: flex;
   flex: row nowrap;
   overflow-x: hidden;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 48px;
 }
 </style>

@@ -60,6 +60,11 @@
 .card {
     margin: 10px;
 }
+.card:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 3px 2px #ddd;
+    transition: .5s;
+}
 .card-title {
     font-size: 12px;
     font-weight: bold;

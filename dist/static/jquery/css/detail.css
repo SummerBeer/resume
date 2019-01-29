@@ -1,0 +1,143 @@
+@import url("./common.css");
+.detail-wrap {
+    position: relative;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+
+/********** Nav ************/
+
+#nav {
+    position: relative;
+    width: 100vw;
+    height: 36px;
+    background-color: #333;
+}
+
+.nav-items {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex: row nowrap;
+}
+
+.nav-link {
+    color: #888;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+}
+
+.cart-item-wrap {
+    margin-right: 20px;
+}
+
+.cart-item-wrap a {
+    display: flex;
+    flex: row nowrap;
+    align-items: center;
+}
+
+.cart-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.classify-nav {
+    border-bottom: 1px solid #eee;
+}
+
+
+/*********** footer ************/
+
+.footer-wrapper {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+}
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 60px;
+}
+
+.footer-items {
+    display: flex;
+    flex: row wrap;
+    justify-content: center;
+    line-height: 60px;
+}
+
+.footer-item {
+    float: left;
+    margin: 0px 10px;
+}
+
+.footer-span {
+    position: relative;
+    height: 70px;
+    line-height: 70px;
+    background-color: #4a4a4a;
+}
+
+.footer-span span {
+    color: #ddd;
+    font-size: 14px;
+}
+
+.copyright {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+
+/*********** modal ***********/
+
+.vertify-input-wrap {
+    position: relative;
+    float: left;
+    width: 48%;
+}
+
+#vertify-code {
+    position: relative;
+    width: 100%;
+}
+
+.vertify-code-wrap {
+    position: relative;
+    top: 24px;
+    float: right;
+    width: 48%;
+    height: 36px;
+}
+
+.vertify-code-wrap:hover {
+    cursor: pointer;
+}
+
+.vertify-code-wrap img {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    z-index: 10;
+}
+
+.vertify-code-number {
+    position: absolute;
+    top: 0px;
+    font-size: 28px;
+    left: 10px;
+    z-index: 0;
+    color: #777;
+}

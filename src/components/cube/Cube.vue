@@ -48,7 +48,7 @@ export default {
 
 #cube-wrapper {
   position: relative;
-  height: 80vh;
+  height: 70vh;
   @include flex-center(row);
 }
 .viewport {

@@ -30,6 +30,9 @@ export default {
         },{
           name: "Form",
           link: "form"
+        },{
+          name: "Button",
+          link: "button"
         }
       ],
       items: [{

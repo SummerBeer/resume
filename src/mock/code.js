@@ -103,5 +103,37 @@ var cascader =
 </script>
 `
 
+var radio = 
+`
+<template>
+  <Radio :options=options @value="getRadioValue" name="radio" />
+</template>
 
-module.exports = { table, card, input, checkbox, selector, cascader }
+<script>
+  export default{
+    data(){
+      return {
+        options: ['option1','option2','option3'],
+        radioValue: ""
+      }
+    },
+    methods: {
+      getRadioValue(r){
+        this.radioValue = r
+      }
+    }
+  }
+</script>
+`
+
+var button = 
+`
+<template>
+  <Button theme="red" size="sm">Button</Button>
+  <Button>Button</Button>
+  <Button theme="orange" size="lg">Button</Button>
+  <Button status="disabled" size="lg">Button</Button>
+</template>
+`
+
+module.exports = { table, card, input, checkbox, selector, cascader, radio, button}

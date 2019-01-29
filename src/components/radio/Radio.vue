@@ -1,21 +1,25 @@
 <template>
 
-<div class="radio" 
+<ul id="radio" 
 :options=options 
 :name=name>
-    <div class="option-wrap" v-for="(option, index) in options" :key=index @click="choice(option)">
-        <label class="option-name" :class="[`option-${option==active?'active':''}`]" :for=option> {{option}}: </label>
-        <input :id=option class="option" :name=name type="radio" :value=option v-model="active">
-        <span>
-            <span :class="[`input-${option==active?'active':''}`]"></span>
-        </span>
-    </div>
-</div>
+    <li class="option-item" v-for="(option, index) in options" :key=index @click="doChoice(option)">
+      <span class="option-name" :class="{active: (active==option)}">{{option}}:</span>
+      <span :class="{active: (active==option)}" class="option-circle"></span>
+    </li>
+</ul>
 
 </template>
 
 <script>
-
+/**
+ * 
+ * Radio
+ * @param {Array} options=[]
+ * @param {String} name=""
+ * @param {event} @value=
+ * 
+ */
 export default {
     name: 'radio',
     props: {
@@ -32,13 +36,14 @@ export default {
     },
     data() {
         return {
-            active: this.options[0]
+            active: ""
         }
     },
     methods: {
-        choice(option) {
-            this.$emit("value", option)
-        }
+       doChoice(option){
+         this.active = option
+         this.$emit("value", option)
+       }
     }
 }
 
@@ -48,54 +53,42 @@ export default {
 <style lang="scss" scoped>
 @import '../style/common.scss';
 
-.radio {
-    position: relative;
-    @include flex(row, wrap, flex-start, center);
+#radio {
+  @include flex(row, nowrap, flex-start, center);
 }
-
-.option-wrap {
-    @include flex(row, nowrap, flex-start, center);
-    margin: 10px 0px;
-    margin-right: 20px;
-
-    & .option-name {
-        color: $dark-grey;
+.option-item {
+  @include flex(row, nowrap, space-between, center);
+  margin-right: 10px;
+  & span {
+    margin: 0 5px;
+  }
+  &:hover {
+    cursor: pointer;
+    span {
+      color: $dark-blue;
     }
-    & .option-name:hover {
-        color: $dark-blue;
-        transition: .2s;
-    }
+  }
 }
-
-.option-active {
-    font-weight: 500;
-    color: $dark-blue !important;
+.option-circle {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
 }
-
-input {
-    position: relative;
-    z-index: 10;
-    opacity: 0;
-    right: -14px;
+.option-circle.active::before {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $dark-blue;
 }
-input[type=radio]+span {
-    position: relative;
-    z-index: 1;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 1px solid $dark-blue;
-    z-index: 1;
-}
-.input-active {
-    position: relative;
-    display: block;
-    z-index: 10;
-    top: 2px;
-    left: 2px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: $dark-blue;
+.option-name.active {
+  color: $dark-blue;
 }
 </style>

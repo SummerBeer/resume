@@ -13,6 +13,13 @@
 </template>
 
 <script>
+/**
+ * Button
+ * @param {String} theme="default" red | orange
+ * @param {String} size="md" sm | md | lg
+ * @param {String} disabled="" disabled | ""
+ * 
+ */
 export default {
     name: 'm-btn',
     props: {
@@ -54,6 +61,9 @@ export default {
 }
 .btn-status-disabled *:hover {
     cursor: not-allowed;
+}
+.btn-text {
+  font-weight: bold;
 }
 
 // size

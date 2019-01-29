@@ -94,6 +94,12 @@
           <td>['option1', 'option2', 'option3']</td>
           <td></td>
         </tr>
+        <tr>
+          <td>@value</td>
+          <td>event</td>
+          <td></td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
 
@@ -150,6 +156,12 @@
           <td>String</td>
           <td>md</td>
           <td>sm | md | lg</td>
+        </tr>
+        <tr>
+          <td>@value</td>
+          <td>event</td>
+          <td></td>
+          <td></td>
         </tr>
       </tbody>
     </table>
@@ -211,23 +223,74 @@
         </tr>
       </tbody>
     </table>
+
+    <!-- Radio -->
+    <h2>Radio</h2>
+    <div class="row">
+      <Radio :options=radioOptions @value="getRadioValue" name="radio" />
+      <p>选择的值: {{radioValue}}</p>
+    </div>
+
+    <!-- example -->
+    <h3>代码</h3>
+    <pre>
+      <code>
+        {{radioCode}}
+      </code>
+    </pre>
+
+    <!-- Api -->
+    <h3>API</h3>
+    <table>
+      <thead>
+        <tr>
+          <td>名称</td>
+          <td>类型</td>
+          <td>默认值</td>
+          <td>可选值</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>options</td>
+          <td>Array</td>
+          <td>["option1","option2", "option3"]</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>String</td>
+          <td>radio</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>@value</td>
+          <td>event</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 
 <script>
-import { Input, Selector, Cascader, Checkbox } from "../index.js";
-import { form, input, checkbox, selector, cascader} from "../mock/code.js";
+import { Input, Selector, Cascader, Checkbox, Radio} from "../index.js";
+import { form, input, checkbox, selector, cascader, radio} from "../mock/code.js";
 export default {
   name: "tablePage",
-  components: { Input, Selector, Cascader, Checkbox },
+  components: { Input, Selector, Cascader, Checkbox, Radio},
   data() {
     return {
       inputCode: input,
       checkboxCode: checkbox,
       selectorCode: selector,
       cascaderCode: cascader,
+      radioCode: radio,
+      radioValue: "",
       options: ["option1", "option2", "option3"],
+      radioOptions: ["option1", "option2"],
       cascaderOptions: [
         {
           key: "选项1",
@@ -273,6 +336,9 @@ export default {
     },
     getCascaderValue(r) {
       this.cascaderValue = r;
+    },
+    getRadioValue(r){
+      this.radioValue = r
     }
   }
 };

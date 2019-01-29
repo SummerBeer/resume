@@ -5,7 +5,7 @@
       <div class="table-title">{{title}}</div>
       <div class="table-operate">
         <span>column: {{row}}</span>
-        <div class="row-add operate" @click="row+=1">+</div>
+        <div class="row-add operate" @click="addColumn">+</div>
         <div class="row-minus operate" @click="removeColumn">-</div>
         <span>row: {{column}}</span>
         <div class="column-add operate" @click="column+=1">+</div>
@@ -88,6 +88,14 @@ export default {
         var d = i*(curRow-1)
         this.value.splice(d, 1)
       }
+    },
+
+    addColumn(){
+      var curRow = this.row
+      for(var i=1; i<=this.column; i++){
+        this.value.splice(curRow*i+i-1, 0, "")
+      }
+      this.row += 1
     }
   }
 };

@@ -41,8 +41,8 @@
 
         <!-- 左方弹出的导航条 -->
         <ul class="nav-panel" :class="{active: isToggle}">
-            <li v-for="(page, index) in pages" :key=index @click="isToggle = !isToggle">
-                <router-link :to="{path: page.link}">
+            <li class="nav-panel-item" v-for="(page, index) in pages" :key=index @click="isToggle = !isToggle">
+                <router-link class="nav-panel-link" :to="{path: page.link}">
                     {{page.name}}
                 </router-link>
             </li>
@@ -196,6 +196,11 @@ export default {
             color: white;
             cursor:pointer;
         }
+    }
+    & .nav-panel-link {
+      @include flex-center(row);
+      width: 100%;
+      height: 100%;
     }
 
     .nav-panel {
